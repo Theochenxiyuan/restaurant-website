@@ -85,6 +85,7 @@ header {
   text-transform: uppercase;
   background-color: var(--red-1);
   color: var(--gold-4);
+  border: none;
 }
 
 .btn:hover,
