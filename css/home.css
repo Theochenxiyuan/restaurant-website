@@ -32,12 +32,18 @@ section.welcome {
 .welcome .grid {
   grid-template-rows: 1fr 1fr;
 }
-.welcome span,
-.signup span {
+.welcome span {
   font-size: 1.3rem;
   font-weight: bold;
   z-index: 1;
   text-align: center;
+}
+
+.signup span {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  z-index: 1;
 }
 .signup span {
   color: var(--gold-4);
@@ -57,12 +63,6 @@ section.welcome {
 .signup .btn {
   background-color: var(--gold-2);
   color: var(--dark-2);
-}
-
-.signup .btn:hover,
-.signup .btn:active {
-  background-color: var(--red-4);
-  color: var(--dark-color);
 }
 
 .carousel {
