@@ -78,7 +78,7 @@ header {
 .btn {
   text-align: center;
   text-decoration: none;
-  padding: 10px 20px;
+  padding: 10px 15px;
   font-weight: bold;
   box-shadow: 0 2px 5px #0000004d;
   transition: 0.1s;
@@ -169,7 +169,7 @@ nav.menu {
 
 .footer-title {
   color: var(--gold-4);
-  font-size: 18px;
+  font-size: 1.2rem;
   font-weight: 700;
   margin-bottom: 20px;
   text-transform: uppercase;
@@ -182,7 +182,7 @@ nav.menu {
 }
 
 .contact-info li {
-  font-size: 14px;
+  font-size: 0.9rem;
   line-height: 26px;
 }
 
@@ -201,9 +201,4 @@ footer a {
   color: var(--gold-4);
   padding: 10px 0;
   text-align: center;
-}
-
-.footer-bottom p {
-  font-size: 14px;
-  margin: 0;
 }

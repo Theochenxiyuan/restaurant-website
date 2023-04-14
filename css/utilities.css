@@ -16,6 +16,9 @@
 .flex-space-between {
   justify-content: space-between;
 }
+.flex-wrap {
+  flex-wrap: wrap;
+}
 .float-right {
   float: right;
 }
@@ -121,4 +124,8 @@
 
 .hidden {
   display: none;
+}
+
+.shadow {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
