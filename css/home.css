@@ -2,7 +2,7 @@ section.welcome {
   width: 100%;
   position: relative;
   overflow: hidden;
-  min-height: 50vh;
+  min-height: 600px;
 }
 
 .big-picture {
