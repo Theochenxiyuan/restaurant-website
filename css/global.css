@@ -195,10 +195,12 @@ nav.menu {
 footer a {
   color: var(--gold-3);
   display: inline-block;
+  font-size: 1rem;
 }
 .footer-bottom {
   background-color: var(--dark-1);
   color: var(--gold-4);
   padding: 10px 0;
   text-align: center;
+  font-size: 0.9rem;
 }
