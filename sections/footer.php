@@ -5,7 +5,7 @@
             <?php
             $file_name = basename($_SERVER['PHP_SELF']);
             if ($file_name !== 'about.php') {
-                echo '            <div class="footer-section about">
+                echo '<div class="footer-section about">
                 <h3 class="footer-title">About Us</h3>
                 <p>Our dishes are made using traditional techniques and the freshest ingredients to create a unique
                     and flavorful dining experience. <br><a href="about.php">Read More</a>

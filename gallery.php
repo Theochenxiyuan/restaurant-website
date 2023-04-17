@@ -11,9 +11,6 @@ $interior_pictures = scandir($interior_folder_path);
 shuffle($interior_pictures);
 ?>
 
-
-
-<div class="overlay hidden"></div>
 <div class="enlarged flex hidden"></div>
 
 

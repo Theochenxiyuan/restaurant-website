@@ -18,7 +18,7 @@ require_once('sections/header.php');
                     Sichuan province</span>
                 <div class="grid">
                     <a href="#" class="btn">View Menu</a>
-                    <a href="resevation.php" class="btn">Reservation</a>
+                    <a href="reservation.php" class="btn">Reservation</a>
                 </div>
             </div>
         </div>

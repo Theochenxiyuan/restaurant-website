@@ -23,6 +23,7 @@
         echo '<script src="js/gallery.js" defer></script>';
         echo '<link rel="stylesheet" href="css/gallery.css">';
     } elseif ($file_name === 'reservation.php') {
+        echo '<script src="js/reservation.js" defer></script>';
         echo '<link rel="stylesheet" href="css/reservation.css">';
     }
     ?>
