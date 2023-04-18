@@ -31,23 +31,3 @@ select {
   text-align: center;
   font-size: larger;
 }
-
-input[type='range'] {
-  -webkit-appearance: none;
-  height: 10px;
-  background: #fff;
-  border-radius: 5px;
-  outline: none;
-  -webkit-transition: opacity 0.2s;
-  transition: opacity 0.2s;
-}
-
-input[type='range']::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 20px;
-  height: 20px;
-  background: var(--red-1);
-  border-radius: 50%;
-  cursor: pointer;
-}
