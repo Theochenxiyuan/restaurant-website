@@ -7,7 +7,7 @@
   --red-1: #b10000;
   --red-2: #eb0000;
   --red-3: #e04141;
-  --red-4: #ffa7a7;
+  --red-4: #ffb6b6;
   --gold-1: #c2a400;
   --gold-2: #ffd700;
   --gold-3: #ffe13e;
@@ -15,6 +15,17 @@
   --dark-1: #222;
   --dark-2: #383838;
 }
+
+::selection {
+  background-color: var(--gold-1);
+  color: #fff;
+}
+
+::-moz-selection {
+  background-color: var(--gold-1);
+  color: #fff;
+}
+
 body::-webkit-scrollbar {
   display: none;
 }
@@ -68,7 +79,7 @@ header img {
 }
 
 header {
-  height: calc(7vh + 2vw);
+  height: 10vh;
   min-height: 80px;
   text-align: center;
   padding: 12px;
@@ -86,6 +97,7 @@ header {
   background-color: var(--red-1);
   color: var(--gold-4);
   border: none;
+  cursor: pointer;
 }
 
 .btn:hover,

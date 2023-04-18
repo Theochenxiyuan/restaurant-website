@@ -1,0 +1,52 @@
+.big-picture {
+  min-width: 100%;
+  overflow: hidden;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+  border-bottom: 0.6vh solid var(--red-1);
+}
+section.exterior {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  height: 720px;
+  max-height: 90vh;
+}
+.big-picture img {
+  min-width: 100%;
+}
+.exterior h2 {
+  color: #fff;
+}
+.about p {
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.about h2 {
+  margin: 2rem 0;
+}
+.about img {
+  width: 100%;
+  max-width: 500px;
+  margin: 10px;
+}
+.hours {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+.hours li {
+  border-bottom: 2px solid var(--red-1);
+  margin-bottom: 1rem;
+}
+
+section.kitchen {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  height: 480px;
+  max-height: 40vh;
+}

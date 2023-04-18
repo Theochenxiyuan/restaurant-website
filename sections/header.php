@@ -25,6 +25,8 @@
     } elseif ($file_name === 'reservation.php') {
         echo '<script src="js/reservation.js" defer></script>';
         echo '<link rel="stylesheet" href="css/reservation.css">';
+    } elseif ($file_name === 'about.php') {
+        echo '<link rel="stylesheet" href="css/about.css">';
     }
     ?>
 </head>

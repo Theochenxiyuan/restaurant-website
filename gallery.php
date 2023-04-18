@@ -16,6 +16,7 @@ shuffle($interior_pictures);
 
 <main class="my-2 p-1">
     <div class="container">
+        <h2 class="text-center">Photo Gallery</h2>
         <div class="grid gallery-nav">
             <button class="food active">Foods</button>
             <button class="interior">Interior</button>

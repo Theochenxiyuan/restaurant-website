@@ -1,3 +1,12 @@
+.reservation-form {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: auto;
+  max-width: 880px;
+}
+
 .form-group {
   margin-bottom: 10px;
 }
@@ -23,11 +32,20 @@ select {
   font-size: 16px;
   line-height: 1.5;
 }
+
+input:disabled {
+  background-color: #eee;
+}
+
 .time-tip {
   display: block;
+  font-weight: 500;
 }
 .guestsOutput {
   display: block;
   text-align: center;
   font-size: larger;
+}
+.error-text {
+  color: var(--red-1);
 }
