@@ -1,8 +1,9 @@
 <?php
 require_once('sections/tools.php');
 $errors = array('name' => '', 'phone' => '', 'email' => '', 'guests' => '', 'date' => '', 'time' => '');
-$name = $phone = $email = $guests = $date = $time = $special = '';
-
+$name = $phone = $email = $date = $time = $special = '';
+$guests = '1';
+$thankyou = '';
 if (isset($_POST['submit'])) {
     if (empty($_POST['name'])) {
         $errors['name'] = 'Please enter your name. ';
@@ -39,7 +40,7 @@ if (isset($_POST['submit'])) {
     } else {
         $date = test_input($_POST["date"]);
         if (strtotime($date) < time()) {
-            $errors['date'] = "Date must be in the future";
+            $errors['date'] = "Please select a date in the future";
         }
     }
 
@@ -60,6 +61,12 @@ if (isset($_POST['submit'])) {
             $handle = fopen($reservData, 'a+');
             fputcsv($handle, $reservation);
             fclose($handle);
+            $thankyou = '<div class="thankyou flex">
+            <div class="card">
+            <p>Thank you for booking with us! We will be in touch with you soon. </p>
+            <a href="index.php" class="btn">Back</a>
+            </div>
+            </div>';
         }
     }
 }
@@ -69,33 +76,33 @@ if (isset($_POST['submit'])) {
 <?php
 $title = "Reservation";
 require_once('sections/header.php');
-
+echo $thankyou;
 ?>
 
 <main class="my-2 p-1">
     <h2 class="text-center my-1">Reservation</h2>
-    <div class="reservation-form">
+    <div class="reservation-form card">
         <form action="reservation.php" method="POST">
             <div class="form-group">
                 <label for="name">Name</label>
                 <span class="error-text"> <?php echo $errors['name']  ?></span>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name" required value='<?php echo $name ?>'>
             </div>
             <div class="form-group">
                 <label for="phone">Phone</label>
                 <span class="error-text"> <?php echo $errors['phone']  ?></span>
-                <input type="tel" id="phone" name="phone" required>
+                <input type="tel" id="phone" name="phone" required value='<?php echo $phone ?>'>
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
                 <span class="error-text"> <?php echo $errors['email']  ?></span>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" required value='<?php echo $email ?>'>
             </div>
             <div class="form-group">
                 <label for="guests">#of Guests</label>
                 <span class="error-text"> <?php echo $errors['guests']  ?></span>
-                <input type="range" id="guests" name="guests" min="1" max="8" value="1">
-                <span class="guestsOutput">1</span>
+                <input type="range" id="guests" name="guests" min="1" max="8" value='<?php echo $guests ?>'>
+                <span class="guestsOutput"><?php echo $guests ?></span>
             </div>
             <div class="form-group">
                 <label for="date">Date</label>
@@ -110,7 +117,7 @@ require_once('sections/header.php');
             </div>
             <div class="form-group">
                 <label for="special">Special Requests</label>
-                <textarea id="special" name="special"></textarea>
+                <textarea id="special" name="special"><?php echo $special ?></textarea>
             </div>
             <input class="btn" name="submit" type="submit" value="Confirm">
             <input class="btn" name="submit" type="submit" value="No Validate" formnovalidate>

@@ -1,9 +1,20 @@
-const today = new Date();
-const tomorrow = new Date(today);
-tomorrow.setDate(today.getDate() + 1);
-
 const dateInput = document.getElementById('date');
-dateInput.min = tomorrow.toISOString().slice(0, 10);
+let today = new Date();
+let dd = today.getDate();
+let mm = today.getMonth() + 1;
+let yyyy = today.getFullYear();
+
+if (dd < 10) {
+  dd = '0' + dd;
+}
+if (mm < 10) {
+  mm = '0' + mm;
+}
+
+tomorrow = `${yyyy}-${mm}-${dd + 1}`;
+
+dateInput.min = tomorrow;
+
 const timeInput = document.getElementById('time');
 const timeTip = document.querySelector('.time-tip');
 

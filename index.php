@@ -24,7 +24,7 @@ require_once('sections/header.php');
         </div>
     </section>
 
-    <section class="signup p-2">
+    <!--   <section class="signup p-2">
         <div class="container flex flex-col">
             <span>
                 Log in or sign up to order your pickup meal
@@ -34,14 +34,14 @@ require_once('sections/header.php');
                 <a href="#" class="btn mx-1">Sign Up</a>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <section class="gallery my-2">
         <div class="container">
             <h2 class="text-center my-1">Eat. See. Enjoy.</h2>
             <div class="carousel" data-carousel="">
-                <button class="carousel-button prev" data-carousel-button="prev">&lt;</button>
-                <button class="carousel-button next" data-carousel-button="next">&gt;</button>
+                <button class="carousel-button prev" data-carousel-button="prev"><i class="bi bi-caret-left-fill"></i></button>
+                <button class="carousel-button next" data-carousel-button="next"><i class="bi bi-caret-right-fill"></i></button>
                 <ul data-slides="">
                     <li class="slide" data-active="true">
                         <img src="img/food/dandannoodle.png" alt="image of the inside area">

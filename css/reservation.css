@@ -1,4 +1,4 @@
-.reservation-form {
+.card {
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -48,4 +48,25 @@ input:disabled {
 }
 .error-text {
   color: var(--red-1);
+}
+
+.thankyou {
+  position: fixed;
+  z-index: 3;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: #00000066;
+}
+
+.thankyou p {
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 10px;
+}
+
+.thankyou a {
+  display: block;
 }

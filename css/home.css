@@ -3,6 +3,7 @@ section.welcome {
   position: relative;
   overflow: hidden;
   min-height: 600px;
+  border-bottom: 0.6vh solid var(--red-1);
 }
 
 .big-picture {
@@ -74,7 +75,7 @@ section.welcome {
   position: absolute;
   background: none;
   border: none;
-  font-size: 4rem;
+  font-size: 3rem;
   top: 50%;
   transform: translateY(-50%);
   z-index: 2;
@@ -82,12 +83,12 @@ section.welcome {
   cursor: pointer;
   border-radius: 0.25rem;
   padding: 0 0.5rem;
-  background-color: #00000020;
+  background-color: #00000030;
 }
 .carousel-button:hover,
 .carousel-button:focus {
   color: white;
-  background-color: #00000030;
+  background-color: #00000060;
 }
 
 .carousel-button.prev {
@@ -169,4 +170,14 @@ section.welcome {
 .review-card__text {
   font-size: 1rem;
   line-height: 1.2;
+}
+
+@media screen and (min-width: 960px) {
+  .carousel-button.prev {
+    left: -5rem;
+  }
+
+  .carousel-button.next {
+    right: -5rem;
+  }
 }

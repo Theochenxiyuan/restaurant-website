@@ -38,7 +38,7 @@
   box-shadow: 0 2px 5px #0000004d;
 }
 .grid.gallery {
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
 }
 .gallery > div {
   margin: 10px;
@@ -65,15 +65,14 @@
 main h2 {
   margin-bottom: 1rem;
 }
-
-@media screen and (max-width: 960px) {
+@media screen and (min-width: 570px) {
   .grid.gallery {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (min-width: 960px) {
   .grid.gallery {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
