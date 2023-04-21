@@ -7,19 +7,24 @@
   z-index: -1;
   border-bottom: 0.6vh solid var(--red-1);
 }
-section.exterior {
+section.kitchen {
   width: 100%;
   position: relative;
   overflow: hidden;
   height: 720px;
   max-height: 90vh;
 }
+
 .big-picture img {
   min-width: 100%;
 }
-.exterior h2 {
+.exterior h2,
+.kitchen h2 {
   color: #fff;
+  background-color: #00000050;
+  padding: 0.5rem;
 }
+
 .about p {
   margin-bottom: 10px;
   font-weight: 500;
@@ -38,15 +43,16 @@ section.exterior {
   font-weight: 600;
   font-size: 1.1rem;
 }
+
 .hours li {
   border-bottom: 2px solid var(--red-1);
   margin-bottom: 1rem;
 }
 
-section.kitchen {
+section.exterior {
   width: 100%;
   position: relative;
   overflow: hidden;
-  height: 480px;
-  max-height: 40vh;
+  height: 600px;
+  max-height: 60vh;
 }

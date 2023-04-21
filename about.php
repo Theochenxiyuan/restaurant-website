@@ -4,9 +4,10 @@ require_once('sections/header.php');
 ?>
 
 <main>
-    <section class="exterior flex">
+
+    <section class="kitchen flex">
         <div class="big-picture flex">
-            <img src="img/exterior.png" alt="">
+            <img src="img/kitchen.png" alt="">
         </div>
         <div class="container">
             <div class="flex flex-col p-3">
@@ -16,7 +17,6 @@ require_once('sections/header.php');
     </section>
 
     <section class="about my-2 p-1">
-
         <div class="container">
             <h2>Welcome to Szechuan Restaurant!</h2>
             <p>At Szechuan Restaurant, we pride ourselves on offering the best in traditional and modern Szechuan cuisine. Our menu features a wide variety of dishes made with fresh ingredients and authentic Szechuan spices, ensuring that every bite is bursting with flavor.</p>
@@ -40,11 +40,17 @@ require_once('sections/header.php');
         </div>
     </section>
 
-    <section class="kitchen flex">
+    <section class="exterior flex">
         <div class="big-picture flex">
-            <img src="img/kitchen.png" alt="">
+            <img src="img/exterior.png" alt="">
+        </div>
+        <div class="container">
+            <div class="flex flex-col p-3">
+                <h2 class="text-center my-1">Our doors are always open to welcome you.</h2>
+            </div>
         </div>
     </section>
+
 
     <section class="location my-4">
         <div class="container">
@@ -58,25 +64,19 @@ require_once('sections/header.php');
     <section class="hours my-2 p-1">
         <div class="container">
             <h2 class="text-center my-1">Opening Hours</h2>
-            <ul>
+            <ul class="p-1">
                 <li>Monday: <span class="float-right">10:00 - 19:00</span></li>
-            </ul>
-            <ul>
+
                 <li>Tuesday: <span class="float-right">10:00 - 19:00</span></li>
-            </ul>
-            <ul>
+
                 <li>Wednesday: <span class="float-right">10:00 - 19:00</span></li>
-            </ul>
-            <ul>
+
                 <li>Thursday: <span class="float-right">10:00 - 21:00</span></li>
-            </ul>
-            <ul>
+
                 <li>Friday: <span class="float-right">10:00 - 21:00</span></li>
-            </ul>
-            <ul>
+
                 <li>Saturday: <span class="float-right">10:00 - 19:00</span></li>
-            </ul>
-            <ul>
+
                 <li>Sunday: <span class="float-right">10:00 - 19:00</span></li>
             </ul>
         </div>

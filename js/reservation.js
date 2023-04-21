@@ -64,6 +64,7 @@ dateInput.addEventListener('input', () => {
       timeTip.innerText = 'Saturday: 10:00 - 19:00';
       break;
     default:
+      timeInput.disabled = true;
       timeTip.innerText = 'Please select a date first';
   }
 });

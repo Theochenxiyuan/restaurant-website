@@ -41,14 +41,22 @@ if (isset($_POST['submit'])) {
         $date = test_input($_POST["date"]);
         if (strtotime($date) < time()) {
             $errors['date'] = "Please select a date in the future";
+        } else {
+            // Validate time based on selected date
+            if (empty($_POST["time"])) {
+                $errors['time'] = "Time is required";
+            } else {
+                $time = test_input($_POST["time"]);
+                $dayOfWeek = date('l', strtotime($date));
+                $openingTime = ($dayOfWeek == 'Thursday' || $dayOfWeek == 'Friday') ? '10:00' : '10:00';
+                $closingTime = ($dayOfWeek == 'Thursday' || $dayOfWeek == 'Friday') ? '21:00' : '19:00';
+                if (strtotime($time) < strtotime($openingTime) || strtotime($time) > strtotime($closingTime)) {
+                    $errors['time'] = "Please select a time between $openingTime and $closingTime on $dayOfWeek";
+                }
+            }
         }
     }
 
-    if (empty($_POST["time"])) {
-        $errors['time'] = "Time is required";
-    } else {
-        $time = test_input($_POST["time"]);
-    }
 
     $special = test_input($_POST["special"]);
 
