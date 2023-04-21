@@ -40,23 +40,23 @@ require_once('sections/header.php');
         <div class="container">
             <h2 class="text-center my-1">Eat. See. Enjoy.</h2>
             <div class="carousel" data-carousel="">
-                <button class="carousel-button prev" data-carousel-button="prev"><i class="bi bi-caret-left-fill"></i></button>
-                <button class="carousel-button next" data-carousel-button="next"><i class="bi bi-caret-right-fill"></i></button>
+                <button class="carousel-button prev" data-carousel-button="prev" aria-label="Carousel Button Left"><i class="bi bi-caret-left-fill"></i></button>
+                <button class="carousel-button next" data-carousel-button="next" aria-label="Carousel Button Right"><i class="bi bi-caret-right-fill"></i></button>
                 <ul data-slides="">
                     <li class="slide" data-active="true">
-                        <img src="img/food/dandannoodle.png" alt="image of the inside area">
+                        <img src="img/food/sichuanmalachicken.png" alt="image of the food">
                     </li>
 
                     <li class="slide">
-                        <img src="img/food/spicywonton.png" alt="image of the inside area">
+                        <img src="img/food/dryfriedgreenbeans.png" alt="image of the food">
                     </li>
 
                     <li class="slide">
-                        <img src="img/food/mapotofu.png" alt="image of the inside area">
+                        <img src="img/food/sichuaneggplant.png" alt="image of the food">
                     </li>
 
                     <li class="slide">
-                        <img src="img/food/hotandsoursoup.png" alt="image of the inside area">
+                        <img src="img/food/hotandsoursoup.png" alt="image of the food">
                     </li>
                 </ul>
             </div>

@@ -71,7 +71,7 @@ if (isset($_POST['submit'])) {
             fclose($handle);
             $thankyou = '<div class="thankyou flex">
             <div class="card">
-            <p>Thank you for booking with us! We will be in touch with you soon. </p>
+            <p>Thank you for choosing to dine with us! We have received your restaurant reservation and will be in touch with you soon to confirm whether your table has been secured. We look forward to welcoming you to our restaurant.</p>
             <a href="index.php" class="btn">Back</a>
             </div>
             </div>';

@@ -7,7 +7,7 @@
             if ($file_name !== 'about.php') {
                 echo '<div class="footer-section about">
                 <h3 class="footer-title">About Us</h3>
-                <p>At Szechuan Restaurant, we pride ourselves on offering the best in traditional and modern Szechuan cuisine. Our menu features a wide variety of dishes made with fresh ingredients and authentic Szechuan spices, ensuring that every bite is bursting with flavor. <br><a href="about.php">Read More</a>
+                <p>At Szechuan Restaurant, we pride ourselves on offering the best in traditional and modern Szechuan cuisine. Our menu features a wide variety of dishes made with fresh ingredients and authentic Szechuan spices, ensuring that every bite is bursting with flavor. <br><a href="about.php">Learn More</a>
                 </p>
             </div>';
             }

@@ -148,7 +148,7 @@ section.welcome {
 
 .review-card__date {
   font-size: 0.8rem;
-  color: #999;
+  color: var(--dark-2);
 }
 
 .review-card__content {

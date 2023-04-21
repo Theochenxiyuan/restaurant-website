@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Szechuan Restaurant Melbourne">
+    <meta name="keywords" content="Sichuan, Szechuan, Restaurant, Chinese, Melbourne, Reservation">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $title; ?> - Szechuan</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,7 +34,7 @@
 </head>
 
 <body>
-    <button class="menu"><i class="bi bi-list"></i></button>
+    <button class="menu" aria-label="Menu Button"><i class="bi bi-list"></i></button>
     <div class="overlay hidden"></div>
     <nav class="menu">
         <ul class="flex flex-col">

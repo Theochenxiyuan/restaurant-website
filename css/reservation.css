@@ -69,4 +69,9 @@ input:disabled {
 
 .thankyou a {
   display: block;
+  max-width: 500px;
+  margin: auto;
+}
+.thankyou .card {
+  max-width: 500px;
 }
