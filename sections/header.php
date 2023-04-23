@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/utilities.css">
+
+
     <script src="js/menuBtn.js" defer></script>
 
     <?php
@@ -29,6 +31,9 @@
         echo '<link rel="stylesheet" href="css/reservation.css">';
     } elseif ($file_name === 'about.php') {
         echo '<link rel="stylesheet" href="css/about.css">';
+    } elseif ($file_name === 'reviews.php') {
+        echo '<link rel="stylesheet" href="css/reviews.css">';
+        echo '<script src="js/reviews.js" defer></script>';
     }
     ?>
 </head>
@@ -40,11 +45,10 @@
         <ul class="flex flex-col">
             <li><a href="index.php">Home</a></li>
             <li><a href="about.php">About</a></li>
-            <li><a href="#">Menu</a></li>
+            <li><a href="menu.php">Menu</a></li>
             <li><a href="reservation.php">Reservation</a></li>
             <li><a href="gallery.php">Photo Gallery</a></li>
-            <li><a href="#">Reviews</a></li>
-            <li class="hidden"><a href="#">Account</a></li>
+            <li><a href="reviews.php">Reviews</a></li>
         </ul>
         <a href="#">Log In</a>
     </nav>
