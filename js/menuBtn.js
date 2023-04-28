@@ -1,5 +1,5 @@
 const menuBtn = document.querySelector('button.menu');
-const menu = document.querySelector('nav');
+const menu = document.querySelector('nav.menu');
 const overlay = document.querySelector('.overlay');
 
 function showMenu() {

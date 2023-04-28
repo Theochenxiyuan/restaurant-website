@@ -39,12 +39,11 @@
 </head>
 
 <body>
-    <button class="menu" aria-label="Menu Button"><i class="bi bi-list"></i></button>
     <div class="overlay hidden"></div>
     <nav class="menu">
         <ul class="flex flex-col">
             <li><a href="index.php">Home</a></li>
-            <li><a href="about.php">About</a></li>
+            <li><a href="about.php">About Us</a></li>
             <li><a href="menu.php">Menu</a></li>
             <li><a href="reservation.php">Reservation</a></li>
             <li><a href="gallery.php">Photo Gallery</a></li>
@@ -55,6 +54,25 @@
 
     <header>
         <div class="container flex">
+            <nav>
+                <ul class="flex flex-col">
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="about.php">About Us</a></li>
+                    <li><a href="menu.php">Menu</a></li>
+                </ul>
+            </nav>
+
             <img src="img/logo.png" alt="logo">
+
+            <nav>
+                <ul class="flex flex-col">
+                    <li><a href="reservation.php">Reservation</a></li>
+                    <li><a href="gallery.php">Photo Gallery</a></li>
+                    <li><a href="reviews.php">Reviews</a></li>
+                </ul>
+            </nav>
+
         </div>
     </header>
+
+    <button class="menu" aria-label="Menu Button"><i class="bi bi-list"></i></button>
