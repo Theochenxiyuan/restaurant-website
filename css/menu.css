@@ -70,7 +70,7 @@
 .category-group {
   display: grid;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 1rem;
   background-color: var(--red-1);
   color: #fff;
   padding: 10px;

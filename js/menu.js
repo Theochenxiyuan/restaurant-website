@@ -30,7 +30,6 @@ menuGroup.addEventListener('click', (e) => {
 categoryGroup.addEventListener('click', (e) => {
   if (e.target.closest('.expand-btn')) {
     for (let i = 0; i < hiddenCategories.length; i++) {
-      console.log(hiddenCategories[i].style.display);
       if (hiddenCategories[i].style.display == '') {
         hiddenCategories[i].style.display = 'block';
       } else if (hiddenCategories[i].style.display == 'block') {
@@ -58,7 +57,6 @@ categoryGroup.addEventListener('click', (e) => {
     const items = menuGroup.children;
 
     if (activeCategory === 'all') {
-      console.log(activeCategory);
       for (let i = 0; i < items.length; i++) {
         items[i].style.display = 'block';
       }
