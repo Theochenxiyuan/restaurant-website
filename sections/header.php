@@ -34,6 +34,9 @@
     } elseif ($file_name === 'reviews.php') {
         echo '<link rel="stylesheet" href="css/reviews.css">';
         echo '<script src="js/reviews.js" defer></script>';
+    } elseif ($file_name === 'menu.php') {
+        echo '<link rel="stylesheet" href="css/menu.css">';
+        echo '<script src="js/menu.js" defer></script>';
     }
     ?>
 </head>

@@ -1,6 +1,6 @@
 const dateInput = document.getElementById('date');
 let today = new Date();
-let dd = today.getDate();
+let dd = today.getDate() + 1;
 let mm = today.getMonth() + 1;
 let yyyy = today.getFullYear();
 
@@ -11,7 +11,7 @@ if (mm < 10) {
   mm = '0' + mm;
 }
 
-tomorrow = `${yyyy}-${mm}-${dd + 1}`;
+tomorrow = `${yyyy}-${mm}-${dd}`;
 
 dateInput.min = tomorrow;
 
