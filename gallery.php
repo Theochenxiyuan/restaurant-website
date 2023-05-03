@@ -13,7 +13,6 @@ shuffle($interior_pictures);
 
 <div class="enlarged flex hidden"></div>
 
-
 <main class="my-2 p-1">
     <div class="container">
         <h2 class="text-center">Photo Gallery</h2>

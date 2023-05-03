@@ -3,6 +3,8 @@ $title = "Reviews";
 require_once('sections/header.php');
 ?>
 
+<div class="enlarged flex hidden"></div>
+
 <div class="review-overlay">
     <div class="review-form">
         <h3>Write a Review</h3>

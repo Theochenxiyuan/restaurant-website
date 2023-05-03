@@ -109,8 +109,14 @@ echo $thankyou;
             <div class="form-group">
                 <label for="guests">#of Guests</label>
                 <span class="error-text"> <?php echo $errors['guests']  ?></span>
-                <input type="range" id="guests" name="guests" min="1" max="8" value='<?php echo $guests ?>'>
-                <span class="guestsOutput"><?php echo $guests ?></span>
+                <select name="guests" id="guests" required>
+                    <option value="" disabled selected>Please select</option>
+                    <option value="1-2" <?php if ($guests === '1-2') echo 'selected' ?>>1-2 people</option>
+                    <option value="3-4" <?php if ($guests === '3-4') echo 'selected' ?>>3-4 people</option>
+                    <option value="5-6" <?php if ($guests === '5-6') echo 'selected' ?>>5-6 people</option>
+                    <option value="7-8" <?php if ($guests === '7-8') echo 'selected' ?>>7-8 people</option>
+                    <option value="9+" <?php if ($guests === '9+') echo 'selected' ?>>9+ people</option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="date">Date</label>

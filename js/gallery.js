@@ -23,22 +23,20 @@ galleryNav.addEventListener('click', (e) => {
 });
 
 foodGallery.addEventListener('click', (e) => {
-  for (let i = 0; i < galleryItems.length; i++) {
-    if (galleryItems[i].contains(e.target)) {
-      enlarged.classList.remove('hidden');
-      enlarged.innerHTML = galleryItems[i].innerHTML;
-      document.body.style.overflow = 'hidden';
-    }
+  if (e.target.matches('img') && e.target.closest('.gallery > div')) {
+    console.log(e.target.innerHTML);
+    enlarged.classList.remove('hidden');
+    enlarged.innerHTML = e.target.outerHTML;
+    document.body.style.overflow = 'hidden';
   }
 });
 
 interiorGallery.addEventListener('click', (e) => {
-  for (let i = 0; i < galleryItems.length; i++) {
-    if (galleryItems[i].contains(e.target)) {
-      enlarged.classList.remove('hidden');
-      enlarged.innerHTML = galleryItems[i].innerHTML;
-      document.body.style.overflow = 'hidden';
-    }
+  if (e.target.matches('img') && e.target.closest('.gallery > div')) {
+    console.log(e.target.innerHTML);
+    enlarged.classList.remove('hidden');
+    enlarged.innerHTML = e.target.outerHTML;
+    document.body.style.overflow = 'hidden';
   }
 });
 

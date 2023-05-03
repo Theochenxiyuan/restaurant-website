@@ -18,13 +18,6 @@ dateInput.min = tomorrow;
 const timeInput = document.getElementById('time');
 const timeTip = document.querySelector('.time-tip');
 
-const guestsSlider = document.getElementById('guests');
-const guestsOutput = document.querySelector('.guestsOutput');
-
-guestsSlider.oninput = function () {
-  guestsOutput.innerHTML = this.value;
-};
-
 function changeTimeRange(start, end) {
   timeInput.disabled = false;
   timeInput.min = start;

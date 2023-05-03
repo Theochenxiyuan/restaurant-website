@@ -9,6 +9,8 @@ const cancelReviewButton = reviewOverlay.querySelector('.cancel-review');
 const fileInput = document.getElementById('my-images');
 const uploadedImages = document.querySelector('.uploaded-images');
 
+const enlarged = document.querySelector('.enlarged');
+
 filterDropdown.addEventListener('change', () => {
   const selectedFilter = filterDropdown.value;
   let numStars;
@@ -133,4 +135,18 @@ fileInput.addEventListener('change', () => {
       reader.readAsDataURL(file);
     }
   }
+});
+
+reviewsList.addEventListener('click', (e) => {
+  if (e.target.matches('img')) {
+    enlarged.classList.remove('hidden');
+    const imgHTML = e.target.outerHTML;
+    enlarged.innerHTML = imgHTML;
+    document.body.style.overflow = 'hidden';
+  }
+});
+
+enlarged.addEventListener('click', () => {
+  document.body.style.overflow = 'scroll';
+  enlarged.classList.add('hidden');
 });

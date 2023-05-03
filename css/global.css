@@ -228,6 +228,26 @@ footer a {
   margin: auto;
   max-width: 880px;
 }
+
+.enlarged {
+  position: fixed;
+  z-index: 3;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: #00000066;
+}
+
+.enlarged img {
+  max-width: 100vw;
+  max-height: 100vh;
+  min-width: 30vw;
+  z-index: 5;
+  box-shadow: 0 2px 5px #0000004d;
+}
+
 header nav {
   display: none;
   width: 35vw;
