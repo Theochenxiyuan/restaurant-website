@@ -88,7 +88,7 @@ header img {
   box-shadow: 0 2px 5px #0000004d;
 }
 main {
-  min-height: 50vh;
+  min-height: 60vh;
 }
 .btn {
   text-align: center;
@@ -294,6 +294,9 @@ header .container.flex {
   max-width: 1200px;
 }
 
+textarea {
+  font-family: 'Noto Sans', sans-serif !important;
+}
 @media screen and (min-width: 900px) {
   button.menu {
     display: none;

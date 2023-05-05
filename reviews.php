@@ -35,8 +35,8 @@ if (isset($_POST['submit'])) {
 
             if ($file_error === UPLOAD_ERR_OK) {
                 $upload_dir = 'img/reviews/';
-                // Replace spaces in the file name with underscores
-                $new_file_name = str_replace(' ', '_', $name) . '_' . time() . '.webp';
+                // Generate a unique identifier for the image file name
+                $new_file_name = uniqid() . '_' . str_replace(' ', '_', $name) . '.webp';
                 $upload_path = $upload_dir . $new_file_name;
 
                 // Convert the image to WebP format using the GD library
@@ -56,8 +56,8 @@ if (isset($_POST['submit'])) {
     }
     if ($errors === ['name' => '', 'rating' => '', 'review' => '', 'images' => '']) {
         date_default_timezone_set('Australia/Melbourne');
-        $current_date = date('Y-m-d h:i:s A', time());
-        $my_review = [$name, $rating, $review, implode(',', $image_names)];
+        $current_date = date('Y-m-d H:i:s', time());
+        $my_review = [$name, $rating, $review, $current_date, implode(',', $image_names)];
         $reviews_data = 'spreadsheets/reviews.txt';
         if (file_exists($reviews_data)) {
             $handle = fopen($reviews_data, 'a+');
@@ -71,6 +71,19 @@ if (isset($_POST['submit'])) {
             </div>';
         }
     }
+}
+
+$reviews_data = 'spreadsheets/reviews.txt';
+$reviews = [];
+if (file_exists($reviews_data)) {
+    $handle = fopen($reviews_data, 'r');
+    while (!feof($handle)) {
+        $line = fgetcsv($handle);
+        if (!empty($line)) {
+            array_push($reviews, $line);
+        }
+    }
+    fclose($handle);
 }
 
 $title = "Reviews";
@@ -151,56 +164,38 @@ echo $thankyou;
         </div>
 
         <div class="reviews-list">
-            <div class="review">
-                <div class="review-header">
-                    <h3 class="review-title">Jason Lu</h3>
-                    <span class="review-time">10-03-2023 19:20:10</span>
-                </div>
-                <div class="review-content">
-                    <div class="review-rating">
-                        <span class="review-stars">★★★★</span>
-                    </div>
-                    <div class="review-images grid">
-                        <img src="img/1.png" alt="Photo of the review">
-                        <img src="img/2.png" alt="Photo of the review">
-                    </div>
-                    <p class="review-text">This is hands down the best Chinese restaurant I have ever been
-                        to! The food is amazing, the service is exceptional, and the ambiance is lovely. I
-                        highly recommend the Kung Pao chicken and the hot and sour soup.</p>
-                </div>
-            </div>
-            <div class="review">
-                <div class="review-header">
-                    <h3 class="review-title">Charlie J</h3>
-                    <span class="review-time">25-03-2023 19:12:10</span>
-                </div>
-                <div class="review-content">
-                    <div class="review-rating">
-                        <span class="review-stars">★★★</span>
-                    </div>
-                    <div class="review-images grid">
-                        <img src="img/1.png" alt="Photo of the review">
-                        <img src="img/2.png" alt="Photo of the review">
-                    </div>
-                    <p class="review-text">I had the pleasure of dining at Szechuan last night, and it exceeded my expectations. The menu had so many options to choose from, and the food was expertly prepared. I particularly enjoyed the crispy pork belly and the dan dan noodles. The ambiance is also great for a date or a family dinner.</p>
-                </div>
-            </div>
-            <div class="review">
-                <div class="review-header">
-                    <h3 class="review-title">Sarah M</h3>
-                    <span class="review-time">25-04-2023 16:12:10</span>
-                </div>
-                <div class="review-content">
-                    <div class="review-rating">
-                        <span class="review-stars">★★★★★</span>
-                    </div>
-                    <div class="review-images grid">
-                        <img src="img/1.png" alt="Photo of the review">
-                        <img src="img/2.png" alt="Photo of the review">
-                    </div>
-                    <p class="review-text">If you are looking for authentic Szechuan cuisine, this is the place to go. The flavors are bold and spicy, and the dishes are beautifully presented. The staff is friendly and attentive, and the atmosphere is cozy and inviting.</p>
-                </div>
-            </div>
+            <?php foreach ($reviews as $review) {
+                $name = $review[0];
+                $rating = $review[1];
+                $text = $review[2];
+                $date = date_format(date_create("{$review[3]}"), 'd-m-Y H:i:s');
+                $images = $review[4] ? explode(',', $review[4]) : array();
+                echo '<div class="review">';
+                echo '<div class="review-header">';
+                echo '<h3 class="review-title">' . $name . '</h3>';
+                echo '<span class="review-time">' . $date . '</span>';
+                echo '</div>';
+                echo '<div class="review-content">';
+                echo '<div class="review-rating">';
+                echo '<span class="review-stars">';
+                for ($i = 1; $i <= $rating; $i++) {
+                    echo '★';
+                }
+                echo '</span>';
+                echo '</div>';
+                echo '<div class="review-images grid">';
+
+                foreach ($images as $image) {
+                    if (!empty($image)) {
+                        echo '<img src="img/reviews/' . $image . '" alt="Photo of the review">';
+                    }
+                }
+                echo '</div>';
+                echo '<p class="review-text">' . $text . '</p>';
+                echo '</div>';
+                echo '</div>';
+            }
+            ?>
         </div>
 
     </div>

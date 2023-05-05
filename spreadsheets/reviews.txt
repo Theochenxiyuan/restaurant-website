@@ -1,0 +1,7 @@
+"Sarah Ma",5,"If you are looking for authentic Szechuan cuisine, this is the place to go. The flavors are bold and spicy, and the dishes are beautifully presented. The staff is friendly and attentive, and the atmosphere is cozy and inviting.","2023-05-05 22:36:04",6454f8347f604_Sarah_Ma.webp
+"Charlie Jia",5,"I had the pleasure of dining at Szechuan last night, and it exceeded my expectations. The menu had so many options to choose from, and the food was expertly prepared. I particularly enjoyed the crispy pork belly and the dan dan noodles. The ambiance is also great for a date or a family dinner.","2023-04-21 22:36:50",6454f862bf2d4_Charlie_Jia.webp
+"Jason Lu",5,"This is hands down the best Chinese restaurant I have ever been to! The food is amazing, the service is exceptional, and the ambiance is lovely. I highly recommend the Kung Pao chicken and the hot and sour soup.","2023-03-10 22:37:47","6454f89b42c92_Jason_Lu.webp,6454f89b56e17_Jason_Lu.webp"
+"Xiyuan Chen",4,"Actually not too bad.","2023-05-05 22:38:53",
+Mario,3,"Way too spicy!!!!!!!!!!!!!","2023-05-05 22:42:28",
+Zelda,2,"My husband hated it.","2023-05-05 22:43:21",
+Bower,1,"Don't bother. Worst restaurant ever!","2023-05-05 22:44:11",
