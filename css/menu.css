@@ -66,14 +66,17 @@
   background-color: var(--gold-2);
   font-weight: 600;
 }
-
+.category {
+  background-color: var(--red-1);
+  padding: 5px;
+}
 .category-group {
+  padding: 5px;
+  border: 2px solid #fff;
   display: grid;
   flex-wrap: wrap;
   gap: 1rem;
-  background-color: var(--red-1);
   color: #fff;
-  padding: 10px;
   font-weight: 600;
 }
 
@@ -105,7 +108,7 @@
   text-align: center;
   cursor: pointer;
   transition: 0.1s;
-  border: 1px solid;
+  border: 2px solid #fff;
 }
 .expand-btn:hover {
   border-color: var(--gold-2);

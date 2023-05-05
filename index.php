@@ -71,7 +71,7 @@ require_once('sections/header.php');
                 <div class="review-card">
                     <div class="review-card__header">
                         <h3 class="review-card__title">Jason Lu</h3>
-                        <span class="review-card__date">April 8, 2023</span>
+                        <span class="review-card__date">10-03-2023</span>
                     </div>
                     <div class="review-card__content">
                         <div class="review-card__rating">
@@ -85,30 +85,26 @@ require_once('sections/header.php');
 
                 <div class="review-card">
                     <div class="review-card__header">
-                        <h3 class="review-card__title">Jason Lu</h3>
-                        <span class="review-card__date">April 8, 2023</span>
+                        <h3 class="review-card__title">Sarah Ma</h3>
+                        <span class="review-card__date">05-05-2023</span>
                     </div>
                     <div class="review-card__content">
                         <div class="review-card__rating">
                             <span class="review-card__stars">★★★★★</span>
                         </div>
-                        <p class="review-card__text">This is hands down the best Chinese restaurant I have ever been
-                            to! The food is amazing, the service is exceptional, and the ambiance is lovely. I
-                            highly recommend the Kung Pao chicken and the hot and sour soup.</p>
+                        <p class="review-card__text">If you are looking for authentic Szechuan cuisine, this is the place to go. The flavors are bold and spicy, and the dishes are beautifully presented. The staff is friendly and attentive, and the atmosphere is cozy and inviting.</p>
                     </div>
                 </div>
                 <div class="review-card">
                     <div class="review-card__header">
-                        <h3 class="review-card__title">Jason Lu</h3>
-                        <span class="review-card__date">April 8, 2023</span>
+                        <h3 class="review-card__title">Charlie Jia</h3>
+                        <span class="review-card__date">21-04-2023</span>
                     </div>
                     <div class="review-card__content">
                         <div class="review-card__rating">
                             <span class="review-card__stars">★★★★★</span>
                         </div>
-                        <p class="review-card__text">This is hands down the best Chinese restaurant I have ever been
-                            to! The food is amazing, the service is exceptional, and the ambiance is lovely. I
-                            highly recommend the Kung Pao chicken and the hot and sour soup.</p>
+                        <p class="review-card__text">I had the pleasure of dining at Szechuan last night, and it exceeded my expectations. The menu had so many options to choose from, and the food was expertly prepared. I particularly enjoyed the crispy pork belly and the dan dan noodles. The ambiance is also great for a date or a family dinner.</p>
                     </div>
                 </div>
             </div>

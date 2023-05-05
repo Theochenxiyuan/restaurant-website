@@ -53,15 +53,10 @@ main .container.flex {
   color: var(--dark-2);
 }
 
-.review-content {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
 .review-rating {
   margin-right: 10px;
   margin-bottom: 5px;
+  display: block;
 }
 
 .review-stars {
@@ -71,13 +66,20 @@ main .container.flex {
 }
 
 .review-images img {
-  max-width: 100%;
+  max-width: calc(50% - 5px);
   height: auto;
   margin-bottom: 5px;
   cursor: zoom-in;
+  object-fit: cover;
+  aspect-ratio: 4/3;
 }
-
-.review-images.grid,
+.review-images img:only-child {
+  width: 540px;
+  max-width: 100%;
+}
+.review-images.flex {
+  justify-content: space-around;
+}
 .uploaded-images.grid,
 .btn-group.grid {
   grid-template-columns: 1fr 1fr;

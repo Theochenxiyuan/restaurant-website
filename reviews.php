@@ -183,7 +183,7 @@ echo $thankyou;
                 }
                 echo '</span>';
                 echo '</div>';
-                echo '<div class="review-images grid">';
+                echo '<div class="review-images flex">';
 
                 foreach ($images as $image) {
                     if (!empty($image)) {

@@ -13,7 +13,7 @@ require_once('sections/header.php');
 </div>
 <main class="my-2 p-1">
     <div class="container">
-        <div class="category">
+        <div class="category shadow">
             <ul class="category-group">
                 <li class="active-category">All</li>
                 <li>Meat dishes</li>
