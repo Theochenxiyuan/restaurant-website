@@ -156,6 +156,6 @@ main .container.flex {
   border: 1px solid #ccc;
 }
 
-input#my-images {
+input#images {
   display: none;
 }

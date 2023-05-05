@@ -64,9 +64,9 @@ if (isset($_POST['submit'])) {
         date_default_timezone_set('Australia/Melbourne');
         $current_date = date('Y-m-d h:i:s A', time());
         $reservation = [$current_date, $name, $phone, $email, $guests, $date, $time, $special];
-        $reservData = 'spreadsheets/reservation.txt';
-        if (file_exists($reservData)) {
-            $handle = fopen($reservData, 'a+');
+        $reserv_data = 'spreadsheets/reservation.txt';
+        if (file_exists($reserv_data)) {
+            $handle = fopen($reserv_data, 'a+');
             fputcsv($handle, $reservation);
             fclose($handle);
             $thankyou = '<div class="thankyou flex">

@@ -1,40 +1,121 @@
 <?php
+require_once('sections/tools.php');
+$errors = array('name' => '', 'rating' => '', 'review' => '', 'images' => '');
+$name = $rating = $review = '';
+$thankyou = '';
+if (isset($_POST['submit'])) {
+    if (empty($_POST['name'])) {
+        $errors['name'] = 'Please enter your name. ';
+    } else {
+        $name = test_input($_POST["name"]);
+        if (!preg_match("/^[a-zA-Z ]*$/", $name)) {
+            $errors['name'] = "Only letters and white space allowed";
+        }
+    }
+
+    if (empty($_POST["rating"])) {
+        $errors['rating'] = "Rating is required";
+    } else {
+        $rating = test_input($_POST["rating"]);
+    }
+
+    if (empty($_POST["review"])) {
+        $errors['review'] = "Review is required";
+    } else {
+        $review = test_input($_POST["review"]);
+    }
+
+    $image_names = array();
+    if (isset($_FILES['images'])) {
+        foreach ($_FILES['images']['tmp_name'] as $key => $tmp_name) {
+            $file_name = $_FILES['images']['name'][$key];
+            $file_size = $_FILES['images']['size'][$key];
+            $file_type = $_FILES['images']['type'][$key];
+            $file_error = $_FILES['images']['error'][$key];
+
+            if ($file_error === UPLOAD_ERR_OK) {
+                $upload_dir = 'img/reviews/';
+                // Replace spaces in the file name with underscores
+                $new_file_name = str_replace(' ', '_', $name) . '_' . time() . '.webp';
+                $upload_path = $upload_dir . $new_file_name;
+
+                // Convert the image to WebP format using the GD library
+                $image = imagecreatefromstring(file_get_contents($tmp_name));
+                if ($image !== false) {
+                    imagepalettetotruecolor($image);
+                    imagewebp($image, $upload_path, 80);
+                    imagedestroy($image);
+                    $image_names[] = $new_file_name;
+                } else {
+                    $errors['images'] = 'There was an error uploading your image.';
+                }
+            } else if ($file_error !== UPLOAD_ERR_NO_FILE) {
+                $errors['images'] = 'There was an error uploading your image.';
+            }
+        }
+    }
+    if ($errors === ['name' => '', 'rating' => '', 'review' => '', 'images' => '']) {
+        date_default_timezone_set('Australia/Melbourne');
+        $current_date = date('Y-m-d h:i:s A', time());
+        $my_review = [$name, $rating, $review, implode(',', $image_names)];
+        $reviews_data = 'spreadsheets/reviews.txt';
+        if (file_exists($reviews_data)) {
+            $handle = fopen($reviews_data, 'a+');
+            fputcsv($handle, $my_review);
+            fclose($handle);
+            $thankyou = '<div class="thankyou flex">
+            <div class="card">
+            <p>Thank you for reviewing.</p>
+            <a href="reviews.php" class="btn">Back</a>
+            </div>
+            </div>';
+        }
+    }
+}
+
 $title = "Reviews";
 require_once('sections/header.php');
+
+echo $thankyou;
 ?>
+
 
 <div class="enlarged flex hidden"></div>
 
-<div class="review-overlay">
+<div class="review-overlay" <?php if ($errors !== ['name' => '', 'rating' => '', 'review' => '', 'images' => '']) echo "style='display: block;'" ?>>
     <div class="review-form">
         <h3>Write a Review</h3>
-        <form>
+        <form method="POST" action="reviews.php" enctype="multipart/form-data">
             <div class="form-group">
-                <label for="my-name">Name:</label>
-                <input type="text" id="my-name" name="my-name" required>
+                <label for="name">Name:</label>
+                <span class="error-text"> <?php echo $errors['name']  ?></span>
+                <input type="text" id="name" name="name" required value='<?php echo $name ?>'>
             </div>
             <div class="form-group">
-                <label for="my-rating">Rating:</label>
-                <select id="my-rating" name="my-rating" required>
+                <label for="rating">Rating:</label>
+                <span class="error-text"> <?php echo $errors['rating']  ?></span>
+                <select id="rating" name="rating" required>
                     <option value="" disabled selected>Select a rating</option>
-                    <option value="5">5 stars ★★★★★</option>
-                    <option value="4">4 stars ★★★★</option>
-                    <option value="3">3 stars ★★★</option>
-                    <option value="2">2 stars ★★</option>
-                    <option value="1">1 star ★</option>
+                    <option value="5" <?php if ($rating === '5') echo 'selected' ?>>5 stars ★★★★★</option>
+                    <option value="4" <?php if ($rating === '4') echo 'selected' ?>>4 stars ★★★★</option>
+                    <option value="3" <?php if ($rating === '3') echo 'selected' ?>>3 stars ★★★</option>
+                    <option value="2" <?php if ($rating === '2') echo 'selected' ?>>2 stars ★★</option>
+                    <option value="1" <?php if ($rating === '1') echo 'selected' ?>>1 star ★</option>
                 </select>
             </div>
             <div class="form-group">
-                <label for="my-text">Review:</label>
-                <textarea id="my-text" name="my-text" rows="5" required></textarea>
+                <label for="review">Review:</label>
+                <span class="error-text"> <?php echo $errors['review']  ?></span>
+                <textarea id="review" name="review" rows="5" required><?php echo $review ?></textarea>
             </div>
             <div class="form-group">
-                <label for="my-images" class="upload-btn">Upload Image</label>
-                <input type="file" id="my-images" name="my-images[]" accept="image/*" multiple>
+                <span class="error-text"> <?php echo $errors['images']  ?></span>
+                <label for="images" class="upload-btn">Upload Image</label>
+                <input type="file" id="images" name="images[]" accept="image/*" multiple>
                 <div class="uploaded-images grid"></div>
             </div>
             <div class="btn-group grid">
-                <button type="submit" class="btn">Submit Review</button>
+                <input class="btn" name="submit" type="submit" value="Submit">
                 <button type="button" class="btn cancel-review">Cancel</button>
             </div>
         </form>

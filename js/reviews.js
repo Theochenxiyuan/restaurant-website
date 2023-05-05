@@ -6,7 +6,7 @@ const writeReviewButton = document.querySelector('.write-review');
 const reviewOverlay = document.querySelector('.review-overlay');
 const cancelReviewButton = reviewOverlay.querySelector('.cancel-review');
 
-const fileInput = document.getElementById('my-images');
+const fileInput = document.getElementById('images');
 const uploadedImages = document.querySelector('.uploaded-images');
 
 const enlarged = document.querySelector('.enlarged');

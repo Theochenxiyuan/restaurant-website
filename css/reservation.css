@@ -37,32 +37,3 @@ input:disabled {
   text-align: center;
   font-size: larger;
 }
-.error-text {
-  color: var(--red-1);
-}
-
-.thankyou {
-  position: fixed;
-  z-index: 3;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: #00000066;
-}
-
-.thankyou p {
-  text-align: center;
-  font-size: 1.2rem;
-  margin: 10px;
-}
-
-.thankyou a {
-  display: block;
-  max-width: 500px;
-  margin: auto;
-}
-.thankyou .card {
-  max-width: 500px;
-}

@@ -11,12 +11,14 @@ const allCategories = categoryGroup.querySelectorAll('li');
 
 closeBtn.addEventListener('click', () => {
   itemDetails.style.display = 'none';
+  document.body.style.overflow = 'scroll';
 });
 
 menuGroup.addEventListener('click', (e) => {
   if (e.target.matches('.menu-group')) {
     return;
   }
+  document.body.style.overflow = 'hidden';
   const items = menuGroup.children;
   const clickedItem = e.target.closest('.menu-item');
   itemDetails.style.display = 'block';
