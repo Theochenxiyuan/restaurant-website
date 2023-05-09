@@ -2,7 +2,6 @@
 $delete_reserv = '';
 if (isset($_GET['$delete_reserv'])) {
     $delete_reserv = $_GET['$delete_reserv'];
-    echo $delete_reserv;
 }
 
 if (!empty($delete_reserv)) {
@@ -30,5 +29,23 @@ if (!empty($delete_reserv)) {
         header('Location: admin.php');
     } else {
         echo "Invalid line number.";
+    }
+}
+
+$file_to_delete = '';
+if (isset($_GET['$file_to_delete'])) {
+    $file_to_delete = $_GET['$file_to_delete'];
+}
+
+if (!empty($file_to_delete)) {
+    if (file_exists($file_to_delete)) {
+        if (unlink($file_to_delete)) {
+            echo "Image deleted successfully.";
+            header('Location: admin.php');
+        } else {
+            echo "Unable to delete the image.";
+        }
+    } else {
+        echo "Image not found.";
     }
 }

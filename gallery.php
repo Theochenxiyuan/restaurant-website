@@ -25,7 +25,7 @@ shuffle($interior_pictures);
             <?php
             foreach ($food_pictures as $file) {
                 if ($file != "." && $file != "..") {
-                    echo "<div><img src='img/food/" . $file . "' alt='picture of food' loading='lazy'></div>";
+                    echo "<div><img src='" . $food_folder_path . "/" . $file . "' alt='picture of food' loading='lazy'></div>";
                 }
             }
             ?>
@@ -35,7 +35,7 @@ shuffle($interior_pictures);
             <?php
             foreach ($interior_pictures as $file) {
                 if ($file != "." && $file != "..") {
-                    echo "<div><img src='img/interior/" . $file . "' alt='picture of restaurant interior' loading='lazy'></div>";
+                    echo "<div><img src='" . $interior_folder_path . "/" . $file . "' alt='picture of restaurant interior' loading='lazy'></div>";
                 }
             }
             ?>
