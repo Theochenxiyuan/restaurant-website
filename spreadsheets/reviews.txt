@@ -4,4 +4,5 @@
 "Xiyuan Chen",4,"Actually not too bad.","2023-05-05 22:38:53",
 Mario,3,"Way too spicy!!!!!!!!!!!!!","2023-05-05 22:42:28",
 Zelda,2,"My husband hated it.","2023-05-05 22:43:21",
-Bower,1,"Don't bother. Worst restaurant ever!","2023-05-05 22:44:11",
+Bowser,1,"Don't bother. Worst restaurant ever!","2023-05-05 22:44:11",
+Noah,5,"So good!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!","2023-05-08 01:51:48",
