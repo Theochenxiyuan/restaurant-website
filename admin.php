@@ -18,6 +18,11 @@ if (!isset($_SESSION['user'])) {
     <title>Admin Page - Szechuan</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <style>
+        .tooltip-inner {
+            width: 500px !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -73,12 +78,29 @@ if (!isset($_SESSION['user'])) {
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script>
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+
         const reservation = document.getElementById('reservation');
         const deleteReservBtn = document.querySelector('#deleteReserv a')
+
+        const itemDetail = document.getElementById('item-detail');
+        const menu = document.getElementById('menu');
 
         reservation.addEventListener('click', (e) => {
             if (e.target.matches("[data-bs-target='#deleteReserv']")) {
                 deleteReservBtn.href = "delete.php?" + "$delete_reserv=" + e.target.dataset.reserv;
+            }
+        })
+
+        menu.addEventListener('click', (e) => {
+            if (e.target.matches("[data-bs-target='#item-detail']")) {
+                const name = e.target.closest('.card').querySelector('.card-title').innerText;
+                const itemData = e.target.closest('.card').querySelector('.item-data').innerHTML;
+
+                itemDetail.querySelector('.modal-body').innerHTML = itemData;
+
+                itemDetail.querySelector('.modal-title').innerText = name;
             }
         })
     </script>

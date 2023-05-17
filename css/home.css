@@ -172,7 +172,7 @@ section.welcome {
   line-height: 1.2;
 }
 
-@media screen and (min-width: 960px) {
+@media screen and (min-width: 1200px) {
   .carousel-button.prev {
     left: -5rem;
   }

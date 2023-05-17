@@ -61,11 +61,11 @@ if (isset($_FILES['interior-upload'])) {
         <div class="accordion" id="pictures">
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingOne">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#foodPictures" aria-expanded="true" aria-controls="collapseOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#foodPictures" aria-expanded="false" aria-controls="collapseOne">
                         Food Pictures
                     </button>
                 </h2>
-                <div id="foodPictures" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#pictures">
+                <div id="foodPictures" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#pictures">
                     <div class="accordion-body row justify-content-center">
                         <?php
                         foreach ($food_pictures as $file) {
