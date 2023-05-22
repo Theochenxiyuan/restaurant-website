@@ -1,4 +1,5 @@
 <?php
+require_once('sections/tools.php');
 session_start();
 $username = $_SESSION['user'];
 if (!isset($_SESSION['user'])) {
@@ -6,6 +7,109 @@ if (!isset($_SESSION['user'])) {
     exit();
 }
 
+$food_folder_path = "img/food";
+$food_pictures = scandir($food_folder_path);
+
+$interior_folder_path = "img/interior";
+$interior_pictures = scandir($interior_folder_path);
+
+// Handle food image upload
+if (isset($_FILES['food-upload'])) {
+    $errors = array();
+    $file_name = uniqid() . "." . strtolower(end(explode('.', $_FILES['food-upload']['name'])));
+    $file_size = $_FILES['food-upload']['size'];
+    $file_tmp = $_FILES['food-upload']['tmp_name'];
+    $file_type = $_FILES['food-upload']['type'];
+    $file_ext = strtolower(end(explode('.', $_FILES['food-upload']['name'])));
+
+    $extensions = array("jpeg", "jpg", "png");
+
+    if (in_array($file_ext, $extensions) === false) {
+        $errors[] = "extension not allowed, please choose a JPEG or PNG file.";
+    }
+
+    if (empty($errors) == true) {
+        move_uploaded_file($file_tmp, $food_folder_path . "/" . $file_name);
+        header("Location: admin.php"); // Redirect to avoid form resubmission
+        exit();
+    } else {
+        print_r($errors);
+    }
+}
+
+// Handle interior image upload
+if (isset($_FILES['interior-upload'])) {
+    $errors = array();
+    $file_name = uniqid() . "." . strtolower(end(explode('.', $_FILES['interior-upload']['name'])));
+    $file_size = $_FILES['interior-upload']['size'];
+    $file_tmp = $_FILES['interior-upload']['tmp_name'];
+    $file_type = $_FILES['interior-upload']['type'];
+    $file_ext = strtolower(end(explode('.', $_FILES['interior-upload']['name'])));
+
+    $extensions = array("jpeg", "jpg", "png");
+
+    if (in_array($file_ext, $extensions) === false) {
+        $errors[] = "extension not allowed, please choose a JPEG or PNG file.";
+    }
+
+    if (empty($errors) == true) {
+        move_uploaded_file($file_tmp, $interior_folder_path . "/" . $file_name);
+        header("Location: admin.php"); // Redirect to avoid form resubmission
+        exit();
+    } else {
+        print_r($errors);
+    }
+}
+
+$errors = array('item_name' => '', 'price' => '', 'category' => '', 'image_file' => '', 'description' => '');
+$item_name = $price = $category = $image_file = $description = '';
+
+if (isset($_POST['submit'])) {
+    if (empty($_POST["name"])) {
+        $errors['item_name'] = "Item name is required";
+    } else {
+        $item_name = test_input($_POST["name"]);
+    }
+    if (empty($_POST["price"])) {
+        $errors['price'] = "Item price is required";
+    } else {
+        if (is_numeric($_POST["price"])) {
+            $price = test_input($_POST["price"]);
+        } else {
+            $errors['price'] = "Item price must be a number";
+        }
+    }
+    if (empty($_POST["category"])) {
+        $errors['category'] = "Item category is required.";
+    } else {
+        $category = test_input($_POST["category"]);
+    }
+    if (empty($_POST["image-file"])) {
+        $errors['image_file'] = "Image file name is required";
+    } else {
+        if (preg_match('/^(?=.*\.)[^.].*[^.]$/', $_POST["image-file"])) {
+            $image_file = test_input($_POST["image-file"]);
+        } else {
+            $errors['image_file'] = "Invalid file name";
+        }
+    }
+    if (empty($_POST["description"])) {
+        $errors['description'] = "Item description is required.";
+    } else {
+        $description = test_input($_POST["description"]);
+    }
+    if ($errors === ['item_name' => '', 'price' => '', 'category' => '', 'image_file' => '', 'description' => '']) {
+        $item_data = [$item_name, $price, $category, $image_file, $description];
+        $menu_file = 'spreadsheets/menu.txt';
+        if (file_exists($menu_file)) {
+            $handle = fopen($menu_file, 'a+');
+            fputcsv($handle, $item_data);
+            fclose($handle);
+            header('Location: admin.php');
+            exit();
+        }
+    }
+}
 
 ?>
 
