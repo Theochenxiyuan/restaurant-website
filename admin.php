@@ -65,10 +65,10 @@ $errors = array('item_name' => '', 'price' => '', 'category' => '', 'image_file'
 $item_name = $price = $category = $image_file = $description = '';
 
 if (isset($_POST['submit'])) {
-    if (empty($_POST["name"])) {
+    if (empty($_POST["item-name"])) {
         $errors['item_name'] = "Item name is required";
     } else {
-        $item_name = test_input($_POST["name"]);
+        $item_name = test_input($_POST["item-name"]);
     }
     if (empty($_POST["price"])) {
         $errors['price'] = "Item price is required";
@@ -162,23 +162,17 @@ if (isset($_POST['submit'])) {
     <?php require_once('sections/admin_upload.php'); ?>
     <?php require_once('sections/admin_menu.php'); ?>
 
-    <div class="modal fade" id="deleteReserv" tabindex="-1" aria-labelledby="deleteNotification" aria-hidden="true" data-bs-backdrop="static">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="deleteReserv">Deleting Reservation Data</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    Are you sure you want to delete this? This process can not be undone.
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <a class='card-link btn btn-danger'>Delete</a>
+
+    <footer class="shadow-sm py-4 bg-danger text-bg-danger">
+        <div class="container-lg">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="text-center"> Admin Page for Szechuan restaurant</p>
+                    <p class="text-center">© 2023 Xiyuan Chen</p>
                 </div>
             </div>
         </div>
-    </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script>
@@ -186,7 +180,7 @@ if (isset($_POST['submit'])) {
         const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
 
         const reservation = document.getElementById('reservation');
-        const deleteReservBtn = document.querySelector('#deleteReserv a')
+        const deleteReservBtn = document.querySelector('#deleteReserv .delete')
 
         const itemDetail = document.getElementById('item-detail');
         const menu = document.getElementById('menu');
@@ -205,6 +199,8 @@ if (isset($_POST['submit'])) {
                 itemDetail.querySelector('.modal-body').innerHTML = itemData;
 
                 itemDetail.querySelector('.modal-title').innerText = name;
+                console.log(itemDetail);
+                itemDetail.querySelector('.delete').href = "delete.php?" + "$delete_item=" + e.target.dataset.item;
             }
         })
     </script>

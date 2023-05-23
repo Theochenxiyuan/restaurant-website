@@ -6,7 +6,7 @@ require_once('sections/header.php');
 <main>
     <section class="welcome flex">
         <div class="big-picture flex">
-            <img src="img/big-picture.png" alt="">
+            <img src="img/big-picture.webp" alt="">
         </div>
         <div class="container">
             <div class="flex flex-col p-3">

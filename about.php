@@ -7,7 +7,7 @@ require_once('sections/header.php');
 
     <section class="kitchen flex">
         <div class="big-picture flex">
-            <img src="img/kitchen.png" alt="">
+            <img src="img/kitchen.webp" alt="">
         </div>
         <div class="container">
             <div class="flex flex-col p-3">
@@ -42,7 +42,7 @@ require_once('sections/header.php');
 
     <section class="exterior flex">
         <div class="big-picture flex">
-            <img src="img/exterior.png" alt="">
+            <img src="img/exterior.webp" alt="">
         </div>
         <div class="container">
             <div class="flex flex-col p-3">

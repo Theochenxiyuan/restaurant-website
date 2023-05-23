@@ -19,13 +19,15 @@ if (file_exists($menu_file)) {
         <div class="text-center"> <button type="button" class="btn-lg btn btn-danger" data-bs-toggle="modal" data-bs-target="#add-item">Add Item</button></div>
 
         <div class="row justify-content-center align-items-center p-2">
-            <?php foreach ($menu_items as $item) {
+            <?php
+            $delete_item = 1;
+            foreach ($menu_items as $item) {
                 echo '<div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2 my-1">
                 <div class="card">';
                 echo "<img src='img/food/{$item[3]}' class='card-img-top' alt='...'>";
                 echo "<div class='card-body'>
                 <div class='card-title fw-bold'>$item[0]</div>
-                <button class='btn btn-danger btn-sm' data-bs-toggle='modal' data-bs-target='#item-detail'>Detail</button>
+                <button class='btn btn-danger btn-sm' data-bs-toggle='modal' data-bs-target='#item-detail' data-item='$delete_item'>Detail</button>
                 </div>";
                 echo '<div class="d-none item-data">';
                 echo "<p class='item-price'><span class='fw-bold'>Price: </span> \${$item[1]}  </p>";
@@ -33,6 +35,7 @@ if (file_exists($menu_file)) {
                 echo "<p class='item-description'><span class='fw-bold'>Description: </span>{$item[4]}</p>";
                 echo "<p class='item-image-file'><span class='fw-bold'>Linked Image: </span>{$item[3]}</p>";
                 echo "</div></div></div>";
+                $delete_item++;
             }
             ?>
 
@@ -55,7 +58,7 @@ if (file_exists($menu_file)) {
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-danger">Delete</button>
+                <a class='btn btn-danger delete'>Delete</a>
             </div>
         </div>
     </div>
@@ -73,7 +76,7 @@ if (file_exists($menu_file)) {
                     <div class="mb-3">
                         <label for="name" class="form-label">Item Name:</label>
                         <span class="text-danger"> <?php echo $errors['item_name']; ?></span>
-                        <input type="name" class="form-control" id="name" name="name" required value='<?php echo $item_name ?>'>
+                        <input type="text" class="form-control" id="item-name" name="item-name" required value='<?php echo $item_name ?>'>
                     </div>
                     <div class="mb-3">
                         <label for="price" class="form-label">Item Price:</label>
@@ -99,7 +102,7 @@ if (file_exists($menu_file)) {
                     <div class="mb-3">
                         <label for="image-file" class="form-label">Linked Image:</label>
                         <span class="text-danger"> <?php echo $errors['image_file']; ?></span>
-                        <input type="text" class="form-control" id="image-file" name="image-file" placeholder="Image file name" required value='<?php echo $image_file ?>'>
+                        <input type="text" class="form-control" id="image-file" name="image-file" placeholder="Copy image file name from Food Pictures" required value='<?php echo $image_file ?>'>
                     </div>
                     <div class="mb-3">
                         <label for="description" class="form-label">Description:</label>

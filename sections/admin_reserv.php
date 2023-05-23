@@ -65,3 +65,21 @@ if (file_exists($reservation_file)) {
 
     </div>
 </section>
+
+<div class="modal fade" id="deleteReserv" tabindex="-1" aria-labelledby="deleteNotification" aria-hidden="true" data-bs-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="deleteReserv">Deleting Reservation Data</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete this? This process can not be undone.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <a class='card-link btn btn-danger delete'>Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
